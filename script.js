@@ -1,4 +1,4 @@
-const WEB3FORMS_ACCESS_KEY = "WKLEJ_TUTAJ_ACCESS_KEY";
+const WEB3FORMS_ACCESS_KEY = "a04d2cdd-c7e7-4406-8c63-6609703a6ece";
 
 const STORAGE_KEY = "randka-wikusia-state";
 const QUIZ_LOCK_KEY = "wikaQuizLocked";
