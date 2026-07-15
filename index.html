@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Romantyczne zaproszenie na randkę dla Wikusi.">
+  <title>Randka z Wikusią</title>
+  <link rel="preconnect" href="https://api.web3forms.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="quiz-pending">
+  <div class="page-shell" aria-live="off">
+    <div class="background-decor" aria-hidden="true">
+      <span style="--x: 8%; --delay: 0s; --speed: 18s;">🌸</span>
+      <span style="--x: 21%; --delay: -8s; --speed: 22s;">💗</span>
+      <span style="--x: 36%; --delay: -3s; --speed: 20s;">✦</span>
+      <span style="--x: 58%; --delay: -10s; --speed: 24s;">🌷</span>
+      <span style="--x: 74%; --delay: -5s; --speed: 19s;">♡</span>
+      <span style="--x: 90%; --delay: -12s; --speed: 23s;">✨</span>
+    </div>
+
+    <main class="app" aria-labelledby="app-title">
+      <h1 id="app-title" class="sr-only">Zaproszenie na randkę dla Wikusi</h1>
+
+      <div class="quiz-progress" id="quizProgress" aria-label="Postęp quizu" hidden>
+        <span id="quizProgressText">1 z 4</span>
+        <span class="quiz-progress-dots" aria-hidden="true">
+          <span class="quiz-dot is-active"></span>
+          <span class="quiz-dot"></span>
+          <span class="quiz-dot"></span>
+          <span class="quiz-dot"></span>
+        </span>
+      </div>
+
+      <section class="card quiz-step is-active" data-quiz-screen="welcome" aria-labelledby="quiz-welcome-title">
+        <div class="mini-icon" aria-hidden="true">👀💗</div>
+        <h2 id="quiz-welcome-title">Najpierw sprawdźmy, czy to naprawdę Ty… 👀💗</h2>
+        <p>Tylko prawdziwa Wikusia zna odpowiedzi na te pytania.</p>
+        <p class="quiz-small">Masz tylko jedną szansę na każde pytanie 🤭</p>
+        <button class="btn btn-primary" type="button" id="startQuizButton">Zaczynamy 🌸</button>
+      </section>
+
+      <section class="card quiz-step" data-quiz-screen="q1" aria-labelledby="quiz-q1-title" hidden>
+        <h2 id="quiz-q1-title">Kiedy mamy rocznicę? 📅💗</h2>
+        <p>Wybierz ten wyjątkowy dzień.</p>
+        <div class="quiz-calendar" aria-label="Kalendarz: Październik">
+          <div class="quiz-calendar-month">Październik</div>
+          <div class="quiz-calendar-weekdays" aria-hidden="true">
+            <span>pn.</span>
+            <span>wt.</span>
+            <span>śr.</span>
+            <span>czw.</span>
+            <span>pt.</span>
+            <span>sob.</span>
+            <span>niedz.</span>
+          </div>
+          <div class="quiz-calendar-grid" id="quizCalendarGrid"></div>
+        </div>
+        <p class="quiz-feedback" id="quizFeedback1" aria-live="polite"></p>
+      </section>
+
+      <section class="card quiz-step" data-quiz-screen="q2" aria-labelledby="quiz-q2-title" hidden>
+        <h2 id="quiz-q2-title">Jaka jest nasza emotka na czacie? 💬💗</h2>
+        <p>Tylko jedna z nich jest naprawdę nasza.</p>
+        <div class="quiz-emoji-grid" role="group" aria-label="Wybierz naszą emotkę">
+          <button class="quiz-choice quiz-emoji-choice" type="button" data-quiz-emoji="❤️"><span aria-hidden="true">❤️</span><span class="sr-only">Serce</span></button>
+          <button class="quiz-choice quiz-emoji-choice" type="button" data-quiz-emoji="🍄"><span aria-hidden="true">🍄</span><span class="sr-only">Grzybek</span></button>
+          <button class="quiz-choice quiz-emoji-choice" type="button" data-quiz-emoji="☁️"><span aria-hidden="true">☁️</span><span class="sr-only">Chmurka</span></button>
+        </div>
+        <p class="quiz-feedback" id="quizFeedback2" aria-live="polite"></p>
+      </section>
+
+      <section class="card quiz-step" data-quiz-screen="q3" aria-labelledby="quiz-q3-title" hidden>
+        <h2 id="quiz-q3-title">Która piosenka jest nasza? 🎵💗</h2>
+        <p>Wybierz tę jedyną.</p>
+        <div class="quiz-song-grid" role="group" aria-label="Wybierz naszą piosenkę">
+          <button class="quiz-choice quiz-song-card" type="button" data-quiz-song="California White">
+            <img src="assets/california-white.png" alt="Okładka piosenki California White">
+            <strong>California White</strong>
+          </button>
+          <button class="quiz-choice quiz-song-card" type="button" data-quiz-song="Wyglądasz Idealnie">
+            <img src="assets/wygladasz-idealnie-skolim.png" alt="Okładka piosenki Wyglądasz Idealnie - Skolim">
+            <strong>Wyglądasz Idealnie</strong>
+            <span>Skolim</span>
+          </button>
+          <button class="quiz-choice quiz-song-card" type="button" data-quiz-song="Sebiksy">
+            <img src="assets/sebiksy-kacperczyk.png" alt="Okładka piosenki Sebiksy - Kacperczyk">
+            <strong>Sebiksy</strong>
+            <span>Kacperczyk</span>
+          </button>
+        </div>
+        <p class="quiz-feedback" id="quizFeedback3" aria-live="polite"></p>
+      </section>
+
+      <section class="card quiz-step" data-quiz-screen="q4" aria-labelledby="quiz-q4-title" hidden>
+        <div class="mini-icon" aria-hidden="true">🧱🖤</div>
+        <h2 id="quiz-q4-title">Jaką figurkę LEGO dostałem od Ciebie? 🧱🖤</h2>
+        <p>Wpisz nazwę postaci.</p>
+        <form class="quiz-text-form" id="legoQuizForm" novalidate>
+          <label for="legoAnswer">Nazwa postaci</label>
+          <input id="legoAnswer" type="text" autocomplete="off" placeholder="Wpisz odpowiedź…">
+          <button class="btn btn-primary" type="submit" id="legoSubmitButton">Sprawdzam odpowiedź 💗</button>
+        </form>
+        <p class="quiz-feedback" id="quizFeedback4" aria-live="polite"></p>
+      </section>
+
+      <section class="card quiz-step quiz-lock-card" data-quiz-screen="locked" aria-labelledby="quiz-lock-title" hidden>
+        <div class="mini-icon" aria-hidden="true">🔒</div>
+        <h2 id="quiz-lock-title">Chyba nie jesteś Wikusią… 🤨</h2>
+        <p>Te pytania były proste. Ta strona nie jest przeznaczona dla Ciebie.</p>
+        <p class="quiz-small">Dalszy dostęp został zablokowany 🔒</p>
+      </section>
+
+      <div class="progress" aria-label="Postęp formularza">
+        <span class="progress-dot is-active" data-progress="1" aria-hidden="true">♡</span>
+        <span class="progress-dot" data-progress="2" aria-hidden="true">♡</span>
+        <span class="progress-dot" data-progress="3" aria-hidden="true">♡</span>
+        <span class="progress-dot" data-progress="4" aria-hidden="true">♡</span>
+        <span class="progress-dot" data-progress="5" aria-hidden="true">♡</span>
+        <span class="progress-dot" data-progress="6" aria-hidden="true">♡</span>
+        <span class="sr-only" id="progressText">Krok 1 z 6</span>
+      </div>
+
+      <section class="card step is-active" data-step="1" aria-labelledby="step1-title">
+        <div class="animal-badge" aria-hidden="true">🐶</div>
+        <h2 id="step1-title">Wikusiu, pójdziesz ze mną na randkę? 🌸</h2>
+        <p class="microcopy">Odpowiedź jest niby dowolna, ale serce ma tu swoje zdanie.</p>
+
+        <p class="tease-message" id="noMessage" aria-live="polite"></p>
+
+        <div class="answer-arena" id="answerArena">
+          <button class="btn btn-primary answer-yes" id="yesButton" type="button">TAK 💗</button>
+          <button class="btn btn-secondary answer-no" id="noButton" type="button">NIE 🌸</button>
+        </div>
+      </section>
+
+      <section class="card step" data-step="2" aria-labelledby="step2-title" hidden>
+        <div class="animal-badge blush" aria-hidden="true">🥹</div>
+        <h2 id="step2-title">CZEKAJ… NAPRAWDĘ POWIEDZIAŁAŚ TAK?! 🥹💗</h2>
+        <p>Byłem przygotowany na dłuższą walkę z przyciskiem »NIE« 😅</p>
+        <button class="btn btn-primary" type="button" data-next="3">No dobra, co dalej? →</button>
+      </section>
+
+      <section class="card step" data-step="3" aria-labelledby="step3-title" hidden>
+        <div class="mini-icon" aria-hidden="true">📅💗</div>
+        <h2 id="step3-title">To kiedy Cię porywam? 📅💗</h2>
+        <p>Wybierz dzień i godzinę, które najbardziej Ci pasują.</p>
+
+        <fieldset class="choice-group">
+          <legend>Wybierz dzień</legend>
+          <div class="date-grid" id="dateGrid" role="radiogroup" aria-label="Dostępne dni od 20 do 31 lipca 2026"></div>
+        </fieldset>
+
+        <fieldset class="choice-group times-section" id="timesSection">
+          <legend>Wybierz godzinę</legend>
+          <p class="hint" id="timeHint">Najpierw wybierz dzień, a pokażę dostępne godziny.</p>
+          <div class="time-grid" id="timeGrid" role="radiogroup" aria-label="Dostępne godziny"></div>
+        </fieldset>
+
+        <p class="validation-message" id="dateValidation" aria-live="polite"></p>
+        <button class="btn btn-primary" type="button" id="dateNextButton">Termin wybrany 💗</button>
+      </section>
+
+      <section class="card step" data-step="4" aria-labelledby="step4-title" hidden>
+        <div class="mini-icon" aria-hidden="true">🍽️✨</div>
+        <h2 id="step4-title">Na co mamy ochotę? 🍽️✨</h2>
+        <p>Wybierz klimat naszej randki.</p>
+
+        <fieldset class="choice-group">
+          <legend>Jedzenie albo miejsce</legend>
+          <div class="food-grid" id="foodGrid" role="radiogroup" aria-label="Wybór klimatu randki">
+            <button class="choice-tile food-tile" type="button" data-food="Włoskie" role="radio" aria-checked="false"><span>🍝</span><strong>Włoskie</strong><em>♡</em></button>
+            <button class="choice-tile food-tile" type="button" data-food="Sushi" role="radio" aria-checked="false"><span>🍣</span><strong>Sushi</strong><em>♡</em></button>
+            <button class="choice-tile food-tile" type="button" data-food="Burgery" role="radio" aria-checked="false"><span>🍔</span><strong>Burgery</strong><em>♡</em></button>
+            <button class="choice-tile food-tile" type="button" data-food="Azjatyckie" role="radio" aria-checked="false"><span>🥡</span><strong>Azjatyckie</strong><em>♡</em></button>
+            <button class="choice-tile food-tile" type="button" data-food="Pad Thai" role="radio" aria-checked="false"><span>🍜</span><strong>Pad Thai</strong><em>♡</em></button>
+            <button class="choice-tile food-tile" type="button" data-food="Bar" role="radio" aria-checked="false"><span>🍸</span><strong>Bar</strong><em>♡</em></button>
+          </div>
+        </fieldset>
+
+        <p class="validation-message" id="foodValidation" aria-live="polite"></p>
+        <button class="btn btn-primary" type="button" id="foodNextButton">Wybieram to 💗</button>
+      </section>
+
+      <section class="card step" data-step="5" aria-labelledby="step5-title" hidden>
+        <div class="mini-icon" aria-hidden="true">💌</div>
+        <h2 id="step5-title">Chcesz mi coś jeszcze podpowiedzieć? 💌</h2>
+        <p>Możesz zostawić mi wiadomość albo przekazać mi małą wskazówkę dotyczącą naszej randki.</p>
+
+        <form id="dateForm" novalidate>
+          <input type="checkbox" name="botcheck" id="botcheck" class="honeypot" tabindex="-1" autocomplete="off">
+          <label for="extraMessage">Dodatkowa wiadomość</label>
+          <textarea id="extraMessage" name="message" maxlength="300" placeholder="Napisz coś dla mnie… 💗"></textarea>
+          <div class="textarea-meta">
+            <span>Opcjonalnie</span>
+            <span id="charCounter">0 / 300</span>
+          </div>
+
+          <p class="validation-message" id="sendStatus" aria-live="polite"></p>
+          <button class="btn btn-primary" type="submit" id="submitButton">Wyślij moje wybory 💗</button>
+        </form>
+      </section>
+
+      <section class="card step final-card" data-step="6" aria-labelledby="step6-title" hidden>
+        <div class="mini-icon" aria-hidden="true">💗</div>
+        <h2 id="step6-title">No to jesteśmy umówieni, Wikusiu! 💗</h2>
+
+        <dl class="summary-list">
+          <div>
+            <dt>Data:</dt>
+            <dd id="summaryDate">-</dd>
+          </div>
+          <div>
+            <dt>Godzina:</dt>
+            <dd id="summaryTime">-</dd>
+          </div>
+          <div>
+            <dt>Nasz wybór:</dt>
+            <dd id="summaryFood">-</dd>
+          </div>
+        </dl>
+
+        <p>Cieszę się, że nie wybrałaś »NIE«. Chociaż i tak nie zamierzałem Ci na to pozwolić 🤭</p>
+        <p>Reszta szczegółów pozostaje moją małą tajemnicą… 🌸</p>
+        <p class="love-note">Kocham Cię 💗</p>
+        <button class="restart-link" type="button" id="restartButton">Zacznij od początku</button>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="particle-layer" id="particleLayer" aria-hidden="true"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
